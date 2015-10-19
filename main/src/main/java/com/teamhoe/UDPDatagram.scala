@@ -1,6 +1,6 @@
 package com.teamhoe
 
-import java.net.{DatagramSocket,InetSocketAddress}
+import java.net.{SocketAddress,DatagramPacket,DatagramSocket,InetSocketAddress}
 import java.nio.ByteBuffer
 
 /**
@@ -8,14 +8,18 @@ import java.nio.ByteBuffer
  */
 class UDPDatagram(
                        private val payload:ByteBuffer,
-                       private val destination:InetSocketAddress,
-                       private val source:InetSocketAddress)
+                       private val remoteAddress:InetSocketAddress,
+                       private val localPort:Int)
 {
     def getPayload = payload
-    def getDestinationAddress = destination
-    def getSourceAddress = source
+    def getRemoteAddress = remoteAddress
+    def getLocalPort = localPort
     def send():Unit =
     {
         val socket:DatagramSocket = new DatagramSocket()
+        socket.bind(new InetSocketAddress(localPort))
+        val data = payload.array()
+        socket.send(new DatagramPacket(data,data.length,remoteAddress))
+        socket.close()
     }
 }

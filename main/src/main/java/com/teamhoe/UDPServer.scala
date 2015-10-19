@@ -19,10 +19,10 @@ abstract class UDPServer
             {
                 val packet:DatagramPacket = new DatagramPacket(data,data.length)
                 socket.receive(packet)
-                val payload = ByteBuffer.wrap(packet.getData,packet.getOffset,packet.getLength)
-                val destination = new InetSocketAddress(InetAddress.getLocalHost,packet.getPort)
-                val source = packet.getSocketAddress.asInstanceOf[InetSocketAddress]
-                onDatagram(new UDPDatagram(payload,destination,source))
+                onDatagram(new UDPDatagram(
+                    ByteBuffer.wrap(packet.getData,packet.getOffset,packet.getLength),
+                    packet.getSocketAddress.asInstanceOf[InetSocketAddress],
+                    socket.getPort))
             }
         }
     }
