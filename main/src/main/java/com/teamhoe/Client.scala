@@ -7,7 +7,7 @@ class Client(
         val serverAddress:InetSocketAddress,
         val protocolPort:Int)
 {
-    val server:MyUdpServer = new MyUdpServer()
+    val server:UDPServer = new MyUdpServer()
 
     def registerWithServer():Unit =
     {
