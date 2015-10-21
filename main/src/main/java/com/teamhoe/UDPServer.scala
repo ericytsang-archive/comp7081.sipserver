@@ -28,7 +28,7 @@ abstract class UDPServer(val port:Int)
     {
         override def run():Unit =
         {
-            val data = new Array[Byte](4096)
+            val data = new Array[Byte](128)
             while(!socket.isClosed)
             {
                 val packet:DatagramPacket = new DatagramPacket(data,data.length)

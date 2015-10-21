@@ -95,7 +95,7 @@ object Main
                     if(client.isDefined) client.get.queryServerForClient(new InetSocketAddress(input(1),Integer.parseInt(input(2))))
                     println(
                         if(client.isEmpty) "insufficient connection parameters"
-                        else "unregister request sent")
+                        else "query request sent")
                 }
                 catch
                     {

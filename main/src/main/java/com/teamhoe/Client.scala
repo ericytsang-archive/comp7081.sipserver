@@ -40,7 +40,9 @@ class Client(
         {
             val payload = datagram.getPayload
             val strlen = payload.getInt
-            val string = new String(payload.get(new Array[Byte](strlen)).array())
+            val stringBytes = new Array[Byte](strlen)
+            payload.get(stringBytes)
+            val string = new String(stringBytes)
             println(string)
         }
     }

@@ -22,7 +22,7 @@ class Server(val port:Int)
 
     def isRegistered(address:InetSocketAddress):Boolean =
     {
-        registeredClients.add(address)
+        registeredClients.contains(address)
     }
 
     def sendString(address:InetSocketAddress,string:String):Unit =
@@ -51,7 +51,9 @@ class Server(val port:Int)
                 sendString(datagram.getRemoteAddress,"unregistered")
             case Protocol.TYPE_IS_CLIENT_REGISTERED =>
                 val strlen = payload.getInt
-                val hostname = new String(payload.get(new Array[Byte](strlen)).array())
+                val hostnameBytes = new Array[Byte](strlen)
+                payload.get(hostnameBytes)
+                val hostname = new String(hostnameBytes)
                 val port = payload.getInt
                 if(isRegistered(new InetSocketAddress(hostname,port)))
                 {
