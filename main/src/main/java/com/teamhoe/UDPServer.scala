@@ -6,9 +6,18 @@ import java.nio.ByteBuffer
 /**
  * Created by Eric on 10/18/2015.
  */
-abstract class UDPServer
+abstract class UDPServer(val port:Int)
 {
-    private var socket:DatagramSocket = null
+    private val socket:DatagramSocket = new DatagramSocket(port)
+    new AcceptThread().start()
+
+    def onDatagram(datagram:UDPDatagram):Unit
+
+    def stop():Unit =
+    {
+        // unbind previous datagram socket from port
+        if(!socket.isClosed) socket.close()
+    }
 
     private class AcceptThread extends Thread
     {
@@ -24,25 +33,6 @@ abstract class UDPServer
                     packet.getSocketAddress.asInstanceOf[InetSocketAddress],
                     socket.getPort))
             }
-        }
-    }
-
-    def onDatagram(datagram:UDPDatagram):Unit
-    def startListening(port:Int):Unit =
-    {
-        // stop previous socket, and bind new datagram socket to port
-        stopListening()
-        socket = new DatagramSocket(port)
-
-        // start an accept thread for the datagram socket
-        new AcceptThread().start()
-    }
-    def stopListening():Unit =
-    {
-        // unbind previous datagram socket from port
-        if(socket != null && !socket.isClosed)
-        {
-            socket.close()
         }
     }
 }
