@@ -55,8 +55,10 @@ class Server(val port:Int)
                 payload.get(hostnameBytes)
                 val hostname = new String(hostnameBytes)
                 val port = payload.getInt
-                if(isRegistered(new InetSocketAddress(hostname,port)))
+                val addressToCkeck = new InetSocketAddress(hostname,port)
+                if(isRegistered(addressToCkeck))
                 {
+                    sendString(addressToCkeck,"Hello")
                     sendString(datagram.getRemoteAddress,"ACK")
                 }
                 else
