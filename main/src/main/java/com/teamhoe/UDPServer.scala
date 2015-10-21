@@ -19,7 +19,7 @@ abstract class UDPServer(val port:Int)
         if(!socket.isClosed) socket.close()
     }
 
-    def send(datagram:DatagramPacket:Unit =
+    def send(datagram:DatagramPacket):Unit =
     {
         socket.send(datagram)
     }
