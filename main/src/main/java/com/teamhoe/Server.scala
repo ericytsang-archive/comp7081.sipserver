@@ -28,12 +28,12 @@ class Server(val port:Int)
     def sendString(address:InetSocketAddress,string:String):Unit =
     {
         val hostname:Array[Byte] = string.getBytes("UTF-8")
-        new UDPDatagram(
+        server.send(new UDPDatagram(
             ByteBuffer.allocate(hostname.length+100)
                 .putInt(hostname.length)
                 .put(hostname),
             address,port)
-            .send()
+            .getDatagramPacket)
     }
 
     private class MyUdpServer extends UDPServer(port)

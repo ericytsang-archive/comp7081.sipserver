@@ -14,11 +14,9 @@ class UDPDatagram(
     def getPayload = payload
     def getRemoteAddress = remoteAddress
     def getLocalPort = localPort
-    def send():Unit =
+    def getDatagramPacket:DatagramPacket =
     {
-        val socket:DatagramSocket = new DatagramSocket(localPort)
         val data = payload.array()
-        socket.send(new DatagramPacket(data,data.length,remoteAddress))
-        socket.close()
+        new DatagramPacket(data,data.length,remoteAddress)
     }
 }

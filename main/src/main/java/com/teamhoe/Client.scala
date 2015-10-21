@@ -11,27 +11,27 @@ class Client(
 
     def registerWithServer():Unit =
     {
-        new UDPDatagram(
+        server.send(new UDPDatagram(
             ByteBuffer.allocate(4).putChar(Protocol.TYPE_REGISTER_CLIENT),
-            serverAddress,protocolPort).send()
+            serverAddress,protocolPort).getDatagramPacket)
     }
     def unregisterFromServer():Unit =
     {
-        new UDPDatagram(
+        server.send(new UDPDatagram(
             ByteBuffer.allocate(4).putChar(Protocol.TYPE_UNREGISTER_CLIENT),
-            serverAddress,protocolPort).send()
+            serverAddress,protocolPort).getDatagramPacket)
     }
     def queryServerForClient(clientIp:InetSocketAddress):Unit =
     {
         val hostname:Array[Byte] = clientIp.getHostString.getBytes("UTF-8")
-        new UDPDatagram(
+        server.send(new UDPDatagram(
             ByteBuffer.allocate(hostname.length+100)
                 .putChar(Protocol.TYPE_IS_CLIENT_REGISTERED)    // packet type
                 .putInt(hostname.length).put(hostname)          // hostname
                 .putInt(clientIp.getPort),                      // port number
             serverAddress,
             protocolPort)
-            .send()
+            .getDatagramPacket)
     }
 
     private class MyUdpServer extends UDPServer(protocolPort)

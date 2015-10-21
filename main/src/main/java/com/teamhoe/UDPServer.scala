@@ -19,6 +19,11 @@ abstract class UDPServer(val port:Int)
         if(!socket.isClosed) socket.close()
     }
 
+    def send(datagram:DatagramPacket:Unit =
+    {
+        socket.send(datagram)
+    }
+
     private class AcceptThread extends Thread
     {
         override def run():Unit =
