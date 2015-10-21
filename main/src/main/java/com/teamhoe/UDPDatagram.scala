@@ -1,6 +1,6 @@
 package com.teamhoe
 
-import java.net.{DatagramPacket,DatagramSocket,InetSocketAddress}
+import java.net.{DatagramPacket,InetSocketAddress}
 import java.nio.ByteBuffer
 
 /**
