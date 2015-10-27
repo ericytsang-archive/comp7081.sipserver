@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="688df3b9-77f2-4d7a-abbe-c816713ce988" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\.idea\codeStyleSettings.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\.idea\gradle.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\.idea\runConfigurations.xml" afterPath="" />
@@ -29,16 +30,15 @@
       <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\.gitignore" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\build.gradle" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\main.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\Client.scala" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\Main.scala" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\Protocol.scala" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\Server.scala" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\UDPDatagram.scala" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\UDPServer.scala" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\settings.gradle" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\Client.scala" afterPath="$PROJECT_DIR$/src/Client.scala" />
+      <change type="MOVED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\Main.scala" afterPath="$PROJECT_DIR$/src/Main.scala" />
+      <change type="MOVED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\Protocol.scala" afterPath="$PROJECT_DIR$/src/Protocol.scala" />
+      <change type="MOVED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\Server.scala" afterPath="$PROJECT_DIR$/src/Server.scala" />
+      <change type="MOVED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\UDPDatagram.scala" afterPath="$PROJECT_DIR$/src/UDPDatagram.scala" />
+      <change type="MOVED" beforePath="C:\Users\Eric\IdeaProjects\comp7081.sipserver\main\src\main\java\com\teamhoe\UDPServer.scala" afterPath="$PROJECT_DIR$/src/UDPServer.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp7081.sipserver.iml" afterPath="$PROJECT_DIR$/comp7081.sipserver.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
