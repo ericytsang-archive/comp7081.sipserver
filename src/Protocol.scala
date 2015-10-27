@@ -1,5 +1,3 @@
-package com.teamhoe
-
 object Protocol
 {
     val TYPE_IS_CLIENT_REGISTERED:Char = 0

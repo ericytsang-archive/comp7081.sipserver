@@ -1,5 +1,3 @@
-package com.teamhoe
-
 import java.net._
 import java.nio.ByteBuffer
 

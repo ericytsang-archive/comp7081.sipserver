@@ -1,5 +1,3 @@
-package com.teamhoe
-
 import java.net.{DatagramPacket,InetSocketAddress}
 import java.nio.ByteBuffer
 

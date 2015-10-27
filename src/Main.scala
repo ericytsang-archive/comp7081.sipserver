@@ -1,5 +1,3 @@
-package com.teamhoe
-
 import java.net.InetSocketAddress
 import java.util.Scanner
 
